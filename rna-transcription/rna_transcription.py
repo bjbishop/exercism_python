@@ -3,13 +3,7 @@ def to_rna(dna_strand):
     if dna_strand == result:
         return(result)
     else:
-        for i in dna_strand:
-            if i == "A":
-                result += "U"
-            if i == "T":
-                result += "A"
-            if i == "C":
-                result += "G"
-            if i == "G":
-                result += "C"
+        in_table = "GCTA"
+        out_table = "CGAU"
+        result = dna_strand.translate(str.maketrans(in_table, out_table))
         return(result)

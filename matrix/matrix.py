@@ -5,21 +5,15 @@ class Matrix(object):
     def __init__(self, matrix_string):
         self.matrix_string = matrix_string.splitlines()
         self.matrix = []
-        temp = []
         for item in self.matrix_string:
-            for number in item.split(" "):
-                temp.append(int(number))
+            temp = [int(number) for number in item.split(" ")]
             self.matrix.append(list(temp))
-            temp.clear()
 
     def row(self, index):
         return self.matrix[index - 1]
 
     def column(self, index):
-        result = []
-        for item in self.matrix:
-            result.append(item[(index - 1)])
-        return result
+        return [item[(index - 1)] for item in self.matrix]
 
 
 if __name__ == '__main__':

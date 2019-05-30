@@ -3,9 +3,8 @@
 
 class Matrix(object):
     def __init__(self, matrix_string):
-        self.matrix_string = matrix_string.splitlines()
         self.matrix = []
-        for item in self.matrix_string:
+        for item in matrix_string.splitlines():
             temp = [int(number) for number in item.split(" ")]
             self.matrix.append(list(temp))
 

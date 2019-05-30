@@ -6,7 +6,7 @@ class Matrix(object):
         self.matrix = []
         for item in matrix_string.splitlines():
             temp = [int(number) for number in item.split(" ")]
-            self.matrix.append(list(temp))
+            self.matrix.append(temp)
 
     def row(self, index):
         return self.matrix[index - 1]

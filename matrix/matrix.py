@@ -17,6 +17,6 @@ class Matrix(object):
 
 if __name__ == '__main__':
     test = Matrix("89 1903 3\n18 3 1\n9 4 800")
-    print(f"Matrix: {test.matrix_string}")
+    print(f"Matrix: {test.matrix}")
     print(f"Row 1: {test.row(1)}")
     print(f"Column 1: {test.column(1)}")

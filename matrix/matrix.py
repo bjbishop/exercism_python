@@ -4,22 +4,22 @@
 class Matrix(object):
     def __init__(self, matrix_string):
         self.matrix_string = matrix_string.splitlines()
-
-    def row(self, index):
-        result = []
+        self.matrix = []
         temp = []
         for item in self.matrix_string:
-            temp.append(item.split(" "))
-        for item in temp:
-            result.append(list(map(int, item)))
-        return(result[index - 1])
+            for number in item.split(" "):
+                temp.append(int(number))
+            self.matrix.append(list(temp))
+            temp.clear()
+
+    def row(self, index):
+        return self.matrix[index - 1]
 
     def column(self, index):
         result = []
-        for item in self.matrix_string:
-            temp = item.split()
-            result.append(int(temp[(index - 1)]))
-        return(result)
+        for item in self.matrix:
+            result.append(item[(index - 1)])
+        return result
 
 
 if __name__ == '__main__':
